@@ -2,7 +2,7 @@
 
 A local tool to quiz developers on AI-generated code changes before merging.
 
-![CI](https://github.com/rivaldojun/ai-code-quiz/actions/workflows/ci.yml/badge.svg)
+
 
 ## Why
 
