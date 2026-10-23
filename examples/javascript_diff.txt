@@ -1,0 +1,9 @@
+diff --git a/example.js b/example.js
+index 1234567..8901234 100644
+--- a/example.js
++++ b/example.js
+@@ -1,5 +1,5 @@
+ function greet(name) {
+-  return "Hello, " + name + "!";
++  return `Hello, ${name}!`;
+}

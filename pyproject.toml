@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ai-code-quiz"
+version = "0.1.0"
+description = "A local tool to quiz developers on AI-generated code changes before merging."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+authors = [{ name = "Rivaldo ADIKPETO" }]
+keywords = ["ai", "code-review", "quiz", "git", "python", "javascript", "local-development", "open-source"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = ["flask", "pygments", "gitpython"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.urls]
+Homepage = "https://github.com/rivaldojun/ai-code-quiz"
+Issues = "https://github.com/rivaldojun/ai-code-quiz/issues"
+
+[project.scripts]
+ai-code-quiz = "ai_code_quiz.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ai_code_quiz"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B", "I", "UP", "S"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101", "S603", "S607", "S108"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
